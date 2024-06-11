@@ -1,0 +1,59 @@
+Run script/customermanagement_server.pl to test the application.
+
+# Customer Management System API
+
+## Setup Instructions
+
+### Requirements
+- Perl 5.30 or higher
+- Catalyst
+- DBIx::Class
+- SQLite
+
+### Installation
+
+1. Install Catalyst and DBIx::Class:
+    ```bash
+    cpan Catalyst::Devel DBIx::Class
+    ```
+
+2. Set up the database:
+    ```bash
+    sqlite3 myapp.db < schema.sql
+    ```
+
+3. Run the application:
+    ```bash
+    script/customer_management_server.pl
+    ```
+
+### Usage
+
+- Create a customer:
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{"name":"Sameera Guna","email":"SamG@example.com","phone_number":"1234567890"}' http://localhost:3000/customer/create
+    ```
+
+- Read customer details:
+    ```bash
+    curl http://localhost:3000/customer/read/1
+    ```
+
+- Update customer information:
+    ```bash
+    curl -X PUT -H "Content-Type: application/json" -d '{"name":"Sameera Smith","email":"Sam.Smith@example.com"}' http://localhost:3000/customer/update/1
+    ```
+
+- Delete a customer:
+    ```bash
+    curl -X DELETE http://localhost:3000/customer/delete/1
+    ```
+
+## Version Information
+
+- Perl 5.30
+- Catalyst 5.90128
+- DBIx::Class 0.082841
+- SQLite 3.31.1
+
+
