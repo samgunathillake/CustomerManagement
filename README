@@ -1,5 +1,17 @@
-Run script/customermanagement_server.pl to test the application.
+# @@@--- Short Version - Basic Commands ---@@@
+# Customer Management System API
 
+1. Git Clone
+$ git clone https://github.com/samgunathillake/CustomerManagement
+
+2. Go to directory
+$ cd CustomerManagement
+
+3. Run script/customermanagement_server.pl to test the application
+$ ./script/customermanagement_server.pl 
+
+
+# @@@--- Full Version - All Installation Commands ---@@@
 # Customer Management System API
 
 ## Setup Instructions
@@ -9,25 +21,46 @@ Run script/customermanagement_server.pl to test the application.
 - Catalyst
 - DBIx::Class
 - SQLite
+- cpanminus
+
+NOTE: If you run into trouble, having these packages may help.
+- git perl perl-devel perl-CPAN sqlite-devel gcc make
 
 ### Installation
 
-1. Install Catalyst and DBIx::Class:
+1. Git Clone
     ```bash
-    cpan Catalyst::Devel DBIx::Class
+    git clone https://github.com/samgunathillake/CustomerManagement
     ```
 
-2. Set up the database:
+2. Go to directory
+    ```bash   
+    cd CustomerManagement
+    ```
+
+3. Install any of the requied modules in your local environment
+    ```bash
+    cpanm Catalyst::Devel DBIx::Class
+    cpanm Catalyst::ScriptRunner
+    cpanm Catalyst::Model::DBIC::Schema
+    cpanm YAML::XS
+    cpanm Catalyst::Controller::REST
+    cpanm Catalyst::Plugin::Static::Simple
+    cpanm Catalyst::Plugin::ConfigLoader
+    cpanm Config::General
+    ```
+
+4. Set up the database:
     ```bash
     sqlite3 myapp.db < schema.sql
     ```
 
-3. Run the application:
+5. Run the application:
     ```bash
     script/customermanagement_server.pl
     ```
 
-### Usage
+### Usage and Testing
 
 - Create a customer:
     ```bash
@@ -49,11 +82,13 @@ Run script/customermanagement_server.pl to test the application.
     curl -X DELETE http://localhost:3000/customer/delete/1
     ```
 
+### Todo - Finalize testing with Test::WWW::Mechanize).
+
 ## Version Information
 
 - Perl 5.30
 - Catalyst 5.90128
 - DBIx::Class 0.082841
 - SQLite 3.31.1
-
+- App-cpanminus-1.7047
 
