@@ -9,10 +9,10 @@ my $mech = Test::WWW::Mechanize::Catalyst->new;
 # $mech->base_url('http://localhost:3000');
 #
 # # Test creating a new customer
-# $mech->post_ok('/customer', { name => 'John Doe', email => 'john@example.com', phone_number => '1234567890' }, 'Created new customer');
+# $mech->post_ok('/customer/create', { name => 'John Doe', email => 'john@example.com', phone_number => '1234567890' }, 'Created new customer');
 #
 # # Test reading customer details
-# $mech->get_ok('/customer/1', 'Read customer details');
+# $mech->get_ok('/customer/read/6', 'Read customer details');
 # $mech->content_contains('John Doe', 'Customer name is correct');
 #
 # # Add more test cases for update and delete operations
