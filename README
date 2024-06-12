@@ -24,7 +24,7 @@ Run script/customermanagement_server.pl to test the application.
 
 3. Run the application:
     ```bash
-    script/customer_management_server.pl
+    script/customermanagement_server.pl
     ```
 
 ### Usage
